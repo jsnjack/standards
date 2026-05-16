@@ -7,7 +7,7 @@ AGENTS.universal.md          Commit to every project root
 AGENTS.go.md                 Commit to every Go project root
 CLAUDE.md                    One line: @AGENTS.md — lets Claude Code read the same instructions
 .claude/skills/
-  convert-to-standards/      Skill: convert a Go repo to standards (auto-discovered by Copilot and Claude Code)
+  y-convert-to-standards/    Skill: convert a Go repo to standards (auto-discovered by Copilot and Claude Code)
 ```
 
 To refresh in a project:

@@ -1,5 +1,5 @@
 ---
-name: convert-to-standards
+name: y-convert-to-standards
 description: 'Convert a Go project to jsnjack/standards conventions. Use when onboarding a repo, adding AGENTS.md, scaffolding CLAUDE.md, updating Makefile ldflags, or applying universal and Go-specific coding standards to a project.'
 argument-hint: 'path to the project/repo to convert'
 ---
