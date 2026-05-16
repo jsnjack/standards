@@ -15,4 +15,4 @@ To refresh in a project:
 make standards
 ```
 
-To update conventions: edit the relevant file, update `prompts/convert-to-standards.md` if migration steps changed.
+To update conventions: edit the relevant file directly.
