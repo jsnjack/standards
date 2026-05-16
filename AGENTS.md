@@ -6,8 +6,8 @@ Universal conventions and language-specific extensions.
 AGENTS.universal.md          Commit to every project root
 AGENTS.go.md                 Commit to every Go project root
 CLAUDE.md                    One line: @AGENTS.md — lets Claude Code read the same instructions
-prompts/
-  convert-to-standards.md    Paste into any agent to convert a repo
+.claude/skills/
+  convert-to-standards/      Skill: convert a Go repo to standards (auto-discovered by Copilot and Claude Code)
 ```
 
 To refresh in a project:

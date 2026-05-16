@@ -1,3 +1,9 @@
+---
+name: convert-to-standards
+description: 'Convert a Go project to jsnjack/standards conventions. Use when onboarding a repo, adding AGENTS.md, scaffolding CLAUDE.md, updating Makefile ldflags, or applying universal and Go-specific coding standards to a project.'
+argument-hint: 'path to the project/repo to convert'
+---
+
 # Convert Go project to standards
 
 Read `AGENTS.universal.md` first — it defines all conventions referenced below.
@@ -274,13 +280,3 @@ make check
 
 All targets must pass before committing.
 
----
-
-## Step 8 — Commit
-
-```bash
-git add -A
-git commit -m "Apply Go standards
-
-- <summarise what changed>"
-```
