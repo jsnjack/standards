@@ -262,6 +262,8 @@ Comply with error conventions in `AGENTS.universal.md`:
 - `fmt.Errorf("context: %w", err)` everywhere.
 - `http.Error` + immediate return in handlers.
 - No `log.Fatal` / `os.Exit` in goroutines.
+- No ignored errors (`_ = fn()` or bare discards). Log unactionable errors at
+  trace level so `--trace` surfaces them.
 
 ---
 
