@@ -103,8 +103,15 @@ errors through the UI itself.
   than one place gets a named constant.
 - **No dead code.** Remove unused code. If something is temporarily disabled,
   replace it with a TODO comment explaining why and what needs to happen.
-- **Comments explain why, not what.** The code says what. Comments explain
-  intent, gotchas, and non-obvious constraints.
+- **Comments earn their place.** Write one only when the fact isn't obvious from
+  the code itself: the reason something is done a certain way, a link to an
+  external reference (ticket or advisory ID, URL), a warning about an easy way to
+  break the code, or a rule the code depends on that you can't see by reading it.
+  Never restate what the code or config does, describe the steps the code already
+  shows, repeat what a name already says, add reassurance ("safe", "read-only",
+  "no changes"), or put process and opinions in code (those belong in docs).
+  Default to no comment; match how much the surrounding file comments. When
+  unsure, leave it out.
 
 ---
 
