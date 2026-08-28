@@ -107,15 +107,21 @@ errors through the UI itself.
   than one place gets a named constant.
 - **No dead code.** Remove unused code. If something is temporarily disabled,
   replace it with a TODO comment explaining why and what needs to happen.
-- **Comments earn their place.** Write one only when the fact isn't obvious from
-  the code itself: the reason something is done a certain way, a link to an
-  external reference (ticket or advisory ID, URL), a warning about an easy way to
-  break the code, or a rule the code depends on that you can't see by reading it.
-  Never restate what the code or config does, describe the steps the code already
-  shows, repeat what a name already says, add reassurance ("safe", "read-only",
-  "no changes"), or put process and opinions in code (those belong in docs).
-  Default to no comment; match how much the surrounding file comments. When
-  unsure, leave it out.
+- **Comments earn their place.** Default to no comment. Write one only when it
+  explains a fact that isn't obvious from the code itself. Keep concise "why"
+  comments that explain the origin of a non-obvious value, a security or sandbox
+  invariant, a compatibility quirk or workaround, an easy way to break the code,
+  an invisible rule the code depends on, or an upstream reference (ticket,
+  advisory ID, or URL). Prefer one line; use more only when one line would omit
+  necessary context.
+  Never write AI diary or proof-of-work notes, including verification reports.
+  Never narrate mechanical control flow, restate what code or configuration does,
+  merely repeat a name or type signature, add reassurance ("safe", "read-only",
+  "no changes"), or put process and opinions in code (those belong in
+  documentation).
+  Required public-symbol documentation and actionable TODOs are exceptions, but
+  they must add information beyond the symbol name or signature. Match how much
+  the surrounding file comments; when unsure, leave it out.
 
 ---
 
