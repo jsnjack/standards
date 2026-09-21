@@ -69,6 +69,18 @@ rebuilds with `go env GOCACHE GOMODCACHE` before changing cache configuration.
 - Only `--debug` (`-d`) and `--config` (`-c`) get short aliases. All other
   flags are long-form only.
 
+**GTK applications:**
+- When an application uses AI, expose model configuration in the UI as a
+  priority-ordered list. Each model has its own provider, model name, endpoint,
+  credentials, and **Test** action. Users can add, remove, and reorder models;
+  show the effective order clearly and use that same order for failover.
+- Make background work visible through one status and activity surface. Show
+  the active operation with a spinner, optional progress, and its finished or
+  failed state; identify the model that answered when AI is involved so
+  fallback is visible. Put the status surface in an existing persistent bottom
+  panel when the window has one. Otherwise, use a floating card in a
+  `GtkOverlay` so appearing and disappearing does not reflow the main content.
+
 **Directory layout (XDG):** Use `os.UserConfigDir`, `os.UserCacheDir`, and
 `os.UserHomeDir` — never hardcode `~`. Respect the XDG env vars automatically
 (`$XDG_CONFIG_HOME`, `$XDG_CACHE_HOME`, `$XDG_DATA_HOME`).
