@@ -175,6 +175,19 @@ breaks has no value.
   should not block others.
 - Every new exported function gets a test. Every bug fix gets a regression test.
 
+- GUI tests, smoke checks, and screenshot scripts must isolate the user's desktop
+  session, including temporary and ad hoc test launchers. Use a private display
+  or compositor and D-Bus session; do not touch the desktop's clipboard or settings.
+- Before starting `dbus-run-session` for a GUI test, set `XDG_RUNTIME_DIR` to a
+  fresh temporary directory owned by the current user with mode `0700`. Each
+  independent session needs its own directory. A private D-Bus session or Xvfb
+  alone is insufficient: a second document portal sharing `/run/user/$UID` can
+  unmount the desktop's `doc` filesystem and prevent Flatpak apps from starting
+  ([upstream bug](https://github.com/flatpak/xdg-desktop-portal/issues/2140)).
+  Clean up the test's children, private mounts, and temporary directory on success
+  and failure. Never unmount the desktop's document portal or restart its services
+  as part of a test.
+
 ---
 
 ## Never
