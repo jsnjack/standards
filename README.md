@@ -10,6 +10,7 @@ Shared coding conventions and AI agent instructions for all projects.
 | `AGENTS.universal.md` | Universal conventions — commit to every project root |
 | `AGENTS.go.md` | Go-specific conventions — commit to every Go project root |
 | `AGENTS.android.md` | Android conventions — builds, validation, versioning, signing and release-triggered F-Droid deployment |
+| `headless-gui.sh` | Reference GUI test wrapper (private Xvfb, D-Bus and runtime directory) — copy to `scripts/headless-gui.sh` in projects with GUI tests |
 | `.claude/skills/y-convert-to-standards/` | Skill to migrate a Go repo to these standards |
 
 ## Usage
