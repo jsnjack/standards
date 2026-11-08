@@ -50,8 +50,13 @@ Structure:
 
 ---
 
+## Where the details are   ← omit until docs/ exists
+<table: area being worked on → the docs/<area>.md file to read first>
+
+---
+
 ## Architecture
-<directory tree with one-line descriptions per file/package>
+<directory tree, one line per package; a file-by-file index, if wanted, goes in docs/architecture.md>
 
 ---
 
@@ -71,7 +76,7 @@ Structure:
 ---
 
 ## Design Decisions
-<bullets — non-obvious choices only, one line rationale each>
+<bullets — non-obvious choices only, one line rationale each; a longer story goes in docs/ or in a comment beside the code>
 
 ---
 
@@ -146,7 +151,17 @@ lint: vet
 }
 golangci-lint run
 
-check: fmt vet build test lint
+# Every agent session loads AGENTS.md whole, and Codex reads only its first
+# 32 KiB: keep it under the limit (AGENTS.universal.md, "AGENTS.md size").
+AGENTS_MAX_BYTES ?= 30000
+agents-size:
+	@size=$$(wc -c < AGENTS.md); \
+	if [ "$$size" -gt $(AGENTS_MAX_BYTES) ]; then \
+	  echo "AGENTS.md is $$size bytes, over the $(AGENTS_MAX_BYTES)-byte limit: move detail to docs/ (AGENTS.universal.md, \"AGENTS.md size\")"; \
+	  exit 1; \
+	fi
+
+check: fmt vet build test lint agents-size
 @echo "==> make check: all green"
 
 standards:
